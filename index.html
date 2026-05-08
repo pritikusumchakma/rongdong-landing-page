@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RongDong</title>
+<link href="https://fonts.googleapis.com/css2?family=Sour+Gummy:wght@400;700;900&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --red: #E53935; --blue: #1E88E5; --green: #43A047; --yellow: #F9A825;
+    --dark: #111; --light: #fafafa; --text: #222; --muted: #666;
+  }
+  body { font-family: 'Nunito', sans-serif; background: var(--light); color: var(--text); overflow-x: hidden; }
+  nav { display: flex; align-items: center; justify-content: space-between; padding: 1rem 2rem; background: #fff; border-bottom: 1px solid #eee; position: sticky; top: 0; z-index: 100; }
+  .nav-logo { display: flex; align-items: center; gap: 10px; }
+  .nav-logo svg { width: 36px; height: 36px; border-radius: 50%; overflow: hidden; }
+  .nav-logo span { font-family: 'Sour Gummy', cursive; font-size: 1.4rem; font-weight: 700; color: var(--dark); }
+  .nav-btn { background: var(--dark); color: #fff; border: none; padding: 0.5rem 1.2rem; border-radius: 50px; font-family: 'Nunito', sans-serif; font-size: 0.9rem; font-weight: 600; cursor: pointer; text-decoration: none; }
+  .hero { min-height: 88vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 4rem 2rem; position: relative; overflow: hidden; background: linear-gradient(135deg, #fff8f8 0%, #f0f8ff 50%, #f0fff4 100%); }
+  .hero-bg { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+  .blob { position: absolute; border-radius: 50%; opacity: 0.12; filter: blur(60px); }
+  .blob1 { width: 400px; height: 400px; background: var(--red); top: -100px; left: -100px; }
+  .blob2 { width: 300px; height: 300px; background: var(--blue); top: 50%; right: -80px; }
+  .blob3 { width: 350px; height: 350px; background: var(--green); bottom: -80px; left: 30%; }
+  .blob4 { width: 250px; height: 250px; background: var(--yellow); bottom: 10%; right: 20%; }
+  .hero-icon { width: 100px; height: 100px; border-radius: 50%; overflow: hidden; margin-bottom: 1.5rem; box-shadow: 0 8px 32px rgba(0,0,0,0.12); }
+  .hero h1 { font-family: 'Sour Gummy', cursive; font-size: clamp(3rem, 8vw, 5rem); font-weight: 900; line-height: 1.1; margin-bottom: 1rem; }
+  .h1-r { color: var(--red); } .h1-b { color: var(--blue); } .h1-g { color: var(--green); }
+  .hero-sub { font-size: 1.15rem; color: var(--muted); max-width: 520px; line-height: 1.7; margin-bottom: 2.5rem; }
+  .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; }
+  .btn-primary { display: flex; align-items: center; gap: 10px; background: var(--dark); color: #fff; padding: 0.85rem 1.8rem; border-radius: 50px; font-family: 'Nunito', sans-serif; font-size: 1rem; font-weight: 700; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 4px 16px rgba(0,0,0,0.15); }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.2); }
+  .btn-secondary { display: flex; align-items: center; gap: 8px; background: transparent; color: var(--dark); padding: 0.85rem 1.8rem; border-radius: 50px; font-family: 'Nunito', sans-serif; font-size: 1rem; font-weight: 700; text-decoration: none; border: 2px solid var(--dark); transition: all 0.2s; }
+  .btn-secondary:hover { background: var(--dark); color: #fff; }
+  .features { padding: 5rem 2rem; background: #fff; }
+  .section-title { text-align: center; font-family: 'Sour Gummy', cursive; font-size: 2.2rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--dark); }
+  .section-sub { text-align: center; color: var(--muted); font-size: 1rem; margin-bottom: 3rem; }
+  .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; max-width: 900px; margin: 0 auto; }
+  .feature-card { border-radius: 20px; padding: 2rem 1.5rem; text-align: center; transition: transform 0.2s; }
+  .feature-card:hover { transform: translateY(-4px); }
+  .fc-red { background: #fff0f0; } .fc-blue { background: #f0f5ff; } .fc-green { background: #f0fff4; } .fc-yellow { background: #fffbf0; }
+  .feature-icon { width: 60px; height: 60px; border-radius: 16px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-size: 1.8rem; }
+  .fi-red { background: var(--red); } .fi-blue { background: var(--blue); } .fi-green { background: var(--green); } .fi-yellow { background: var(--yellow); }
+  .feature-card h3 { font-family: 'Sour Gummy', cursive; font-size: 1.2rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--dark); }
+  .feature-card p { font-size: 0.9rem; color: var(--muted); line-height: 1.6; }
+  .download { padding: 5rem 2rem; background: var(--dark); text-align: center; }
+  .download h2 { font-family: 'Sour Gummy', cursive; font-size: 2rem; font-weight: 700; color: #fff; margin-bottom: 0.5rem; }
+  .download p { color: #aaa; margin-bottom: 2rem; }
+  .play-btn { display: inline-flex; align-items: center; gap: 12px; background: #fff; color: var(--dark); padding: 1rem 2rem; border-radius: 14px; text-decoration: none; font-family: 'Nunito', sans-serif; font-weight: 700; font-size: 1rem; transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 4px 20px rgba(0,0,0,0.3); }
+  .play-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(0,0,0,0.4); }
+  .play-btn svg { width: 28px; height: 28px; }
+  .play-btn-text { text-align: left; }
+  .play-btn-text small { display: block; font-size: 0.72rem; font-weight: 400; color: #666; }
+  .play-btn-text span { display: block; font-size: 1.05rem; }
+  .contact { padding: 4rem 2rem; background: #f7f7f7; text-align: center; }
+  .contact h2 { font-family: 'Sour Gummy', cursive; font-size: 2rem; font-weight: 700; margin-bottom: 0.5rem; }
+  .contact p { color: var(--muted); margin-bottom: 1.5rem; }
+  .contact-email { display: inline-flex; align-items: center; gap: 10px; background: #fff; border: 1.5px solid #eee; padding: 0.8rem 1.8rem; border-radius: 50px; font-size: 1rem; font-weight: 600; color: var(--dark); text-decoration: none; transition: box-shadow 0.2s; }
+  .contact-email:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.1); }
+  footer { background: var(--dark); color: #666; text-align: center; padding: 1.5rem; font-size: 0.85rem; }
+  footer .quad { display: inline-flex; gap: 4px; margin-right: 6px; }
+  footer .qs { width: 10px; height: 10px; border-radius: 2px; }
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-logo">
+    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <clipPath id="circle"><circle cx="50" cy="50" r="50"/></clipPath>
+      <g clip-path="url(#circle)">
+        <rect x="0" y="0" width="50" height="50" fill="#E53935"/>
+        <rect x="50" y="0" width="50" height="50" fill="#1E88E5"/>
+        <rect x="0" y="50" width="50" height="50" fill="#43A047"/>
+        <rect x="50" y="50" width="50" height="50" fill="#F9A825"/>
+      </g>
+    </svg>
+    <span>RongDong</span>
+  </div>
+  <a href="#download" class="nav-btn">Download</a>
+</nav>
+<section class="hero">
+  <div class="hero-bg">
+    <div class="blob blob1"></div><div class="blob blob2"></div>
+    <div class="blob blob3"></div><div class="blob blob4"></div>
+  </div>
+  <svg class="hero-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+    <clipPath id="hc"><circle cx="50" cy="50" r="50"/></clipPath>
+    <g clip-path="url(#hc)">
+      <rect x="0" y="0" width="50" height="50" fill="#E53935"/>
+      <rect x="50" y="0" width="50" height="50" fill="#1E88E5"/>
+      <rect x="0" y="50" width="50" height="50" fill="#43A047"/>
+      <rect x="50" y="50" width="50" height="50" fill="#F9A825"/>
+    </g>
+  </svg>
+  <h1><span class="h1-r">Rong</span><span class="h1-b">Do</span><span class="h1-g">ng</span></h1>
+  <p class="hero-sub">Your social space to share moments, connect with friends, and express yourself — all in one place.</p>
+  <div class="hero-btns">
+    <a href="https://play.google.com/store/apps/details?id=com.rongdong.app" class="btn-primary">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
+      Get the App
+    </a>
+    <a href="#features" class="btn-secondary">See Features</a>
+  </div>
+</section>
+<section class="features" id="features">
+  <h2 class="section-title">Everything in One Place</h2>
+  <p class="section-sub">What you get with RongDong</p>
+  <div class="features-grid">
+    <div class="feature-card fc-red"><div class="feature-icon fi-red">📰</div><h3>Feed</h3><p>Stay updated with posts from friends and communities. Like, comment, and share what matters to you.</p></div>
+    <div class="feature-card fc-blue"><div class="feature-icon fi-blue">🎬</div><h3>Reels</h3><p>Watch and share short fun videos. Show off your creativity to the world.</p></div>
+    <div class="feature-card fc-green"><div class="feature-icon fi-green">🎥</div><h3>Videos</h3><p>Enjoy long-form videos in great quality — from entertainment to education, it's all here.</p></div>
+    <div class="feature-card fc-yellow"><div class="feature-icon fi-yellow">💬</div><h3>Chat</h3><p>Talk directly with friends and family. Simple and private messaging, always.</p></div>
+  </div>
+</section>
+<section class="download" id="download">
+  <h2>Download Now</h2>
+  <p>RongDong is available on Google Play — completely free!</p>
+  <a href="https://play.google.com/store/apps/details?id=com.rongdong.app" class="play-btn">
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M3.18 23.76c.3.16.63.24.97.24.43 0 .85-.12 1.22-.35L17.5 17l-3.68-3.68L3.18 23.76z" fill="#EA4335"/>
+      <path d="M20.82 10.3L18.5 9l-3.35 3 3.35 3.35 2.35-1.32a1.97 1.97 0 000-3.73z" fill="#FBBC04"/>
+      <path d="M3.18.24A1.97 1.97 0 002 2v20c0 .74.4 1.42 1.18 1.76l11-11L3.18.24z" fill="#4285F4"/>
+      <path d="M5.37.12L17.5 7l-3.35 3.35L3.18.24C3.54.02 4 0 5.37.12z" fill="#34A853"/>
+    </svg>
+    <div class="play-btn-text"><small>GET IT ON</small><span>Google Play</span></div>
+  </a>
+</section>
+<section class="contact" id="contact">
+  <h2>Get in Touch</h2>
+  <p>Have a question or need help? We're here for you.</p>
+  <a href="mailto:rongdongsupport@gmail.com" class="contact-email">✉ rongdongsupport@gmail.com</a>
+</section>
+<footer>
+  <div style="margin-bottom: 15px;">
+    <span class="quad">
+      <span class="qs" style="background:#E53935"></span>
+      <span class="qs" style="background:#1E88E5"></span>
+      <span class="qs" style="background:#43A047"></span>
+      <span class="qs" style="background:#F9A825"></span>
+    </span>
+  </div>
+  <p style="font-weight:700;color:#fff;margin-bottom:8px;font-size:1.1rem;">Founded by Priti Kusum Chakma</p>
+  <p style="color:#888;font-size:0.9rem;">&copy; 2026 RongDong. All rights reserved.</p>
+</footer>
+</body>
+</html>
