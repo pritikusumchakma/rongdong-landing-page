@@ -44,6 +44,28 @@
   .fi-red { background: var(--red); } .fi-blue { background: var(--blue); } .fi-green { background: var(--green); } .fi-yellow { background: var(--yellow); }
   .feature-card h3 { font-family: 'Sour Gummy', cursive; font-size: 1.2rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--dark); }
   .feature-card p { font-size: 0.9rem; color: var(--muted); line-height: 1.6; }
+
+  /* ── ABOUT SECTION ── */
+  .about { padding: 5rem 2rem; background: linear-gradient(135deg, #f8f9ff 0%, #fff8f8 100%); }
+  .about-inner { max-width: 860px; margin: 0 auto; }
+  .about-intro { font-size: 1.05rem; color: var(--muted); line-height: 1.8; margin-bottom: 3rem; text-align: center; }
+  .about-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; margin-bottom: 3rem; }
+  .about-card { background: #fff; border-radius: 20px; padding: 1.8rem 1.5rem; box-shadow: 0 2px 16px rgba(0,0,0,0.06); border-left: 4px solid transparent; transition: transform 0.2s, box-shadow 0.2s; }
+  .about-card:hover { transform: translateY(-3px); box-shadow: 0 6px 24px rgba(0,0,0,0.1); }
+  .about-card.ac-red { border-left-color: var(--red); }
+  .about-card.ac-blue { border-left-color: var(--blue); }
+  .about-card.ac-green { border-left-color: var(--green); }
+  .about-card.ac-yellow { border-left-color: var(--yellow); }
+  .about-card-icon { font-size: 2rem; margin-bottom: 0.8rem; }
+  .about-card h3 { font-family: 'Sour Gummy', cursive; font-size: 1.1rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--dark); }
+  .about-card p { font-size: 0.9rem; color: var(--muted); line-height: 1.65; }
+  .about-summary { background: var(--dark); color: #fff; border-radius: 24px; padding: 2rem 2.5rem; }
+  .about-summary h3 { font-family: 'Sour Gummy', cursive; font-size: 1.3rem; font-weight: 700; margin-bottom: 1.2rem; color: #fff; }
+  .about-list { list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.7rem; }
+  .about-list li { display: flex; align-items: flex-start; gap: 10px; font-size: 0.92rem; color: #ccc; line-height: 1.5; }
+  .about-list li::before { content: '✓'; color: var(--green); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+  .about-note { margin-top: 1.5rem; font-size: 0.88rem; color: #888; font-style: italic; text-align: center; }
+
   .download { padding: 5rem 2rem; background: var(--dark); text-align: center; }
   .download h2 { font-family: 'Sour Gummy', cursive; font-size: 2rem; font-weight: 700; color: #fff; margin-bottom: 0.5rem; }
   .download p { color: #aaa; margin-bottom: 2rem; }
@@ -79,6 +101,7 @@
   </div>
   <a href="#download" class="nav-btn">Download</a>
 </nav>
+
 <section class="hero">
   <div class="hero-bg">
     <div class="blob blob1"></div><div class="blob blob2"></div>
@@ -103,6 +126,7 @@
     <a href="#features" class="btn-secondary">See Features</a>
   </div>
 </section>
+
 <section class="features" id="features">
   <h2 class="section-title">Everything in One Place</h2>
   <p class="section-sub">What you get with RongDong</p>
@@ -113,6 +137,55 @@
     <div class="feature-card fc-yellow"><div class="feature-icon fi-yellow">💬</div><h3>Chat</h3><p>Talk directly with friends and family. Simple and private messaging, always.</p></div>
   </div>
 </section>
+
+<!-- ── ABOUT SECTION ── -->
+<section class="about" id="about">
+  <div class="about-inner">
+    <h2 class="section-title">আমাদের সম্পর্কে</h2>
+    <p class="section-sub">RongDong কী এবং কেন এটি আলাদা</p>
+
+    <p class="about-intro">
+      RongDong হলো একটি community social content sharing platform, যেখানে সবাই ছবি, ভিডিও, রিলস, স্ট্যাটাস এবং বিভিন্ন ধরনের কনটেন্ট সহজে শেয়ার করতে পারেন। তবে RongDong-এর লক্ষ্য শুধু আরেকটি social media app তৈরি করা নয় — আমাদের উদ্দেশ্য হলো এমন একটি প্ল্যাটফর্ম গড়ে তোলা, যেখানে content creators এবং সাধারণ ব্যবহারকারীরা তাদের সৃজনশীলতা প্রকাশ করতে পারবেন এবং ভালো কনটেন্টের জন্য Reward পাবেন।
+    </p>
+
+    <div class="about-grid">
+      <div class="about-card ac-blue">
+        <div class="about-card-icon">🔒</div>
+        <h3>নিরাপদ Private Chat</h3>
+        <p>আমাদের chat system-এ end-to-end encryption ব্যবহার করা হয়েছে — sender এবং receiver ছাড়া অন্য কেউ message-এর content পড়তে পারে না।</p>
+      </div>
+      <div class="about-card ac-red">
+        <div class="about-card-icon">📵</div>
+        <h3>Screenshot Protection</h3>
+        <p>Chat screen-এ screenshot prevention প্রযুক্তি ব্যবহার করা হয়েছে, যাতে আপনার ব্যক্তিগত কথোপকথনের গোপনীয়তা সর্বোচ্চ সুরক্ষিত থাকে।</p>
+      </div>
+      <div class="about-card ac-green">
+        <div class="about-card-icon">🎁</div>
+        <h3>Reward System (আসছে)</h3>
+        <p>ভবিষ্যতে active users এবং creators-দের activity, engagement ও contribution-এর ভিত্তিতে reward দেওয়ার পরিকল্পনা রয়েছে। আপনার সময় ও পরিশ্রমের মূল্য দেওয়া হবে।</p>
+      </div>
+      <div class="about-card ac-yellow">
+        <div class="about-card-icon">🌱</div>
+        <h3>দীর্ঘমেয়াদি উদ্যোগ</h3>
+        <p>এটি একটি দীর্ঘমেয়াদি উদ্যোগ। আপনাদের মতামত ও সহযোগিতাই RongDong-কে আরও উন্নত করতে সাহায্য করবে।</p>
+      </div>
+    </div>
+
+    <div class="about-summary">
+      <h3>সংক্ষেপে, RongDong-এ আপনি যা পাবেন:</h3>
+      <ul class="about-list">
+        <li>ছবি, ভিডিও, রিলস ও পোস্ট শেয়ার করতে পারবেন</li>
+        <li>নিরাপদে ব্যক্তিগতভাবে chat করতে পারবেন</li>
+        <li>End-to-end encrypted messaging সুবিধা পাবেন</li>
+        <li>Screenshot protection-এর মাধ্যমে privacy বজায় রাখতে পারবেন</li>
+        <li>নিজের community তৈরি করতে পারবেন</li>
+        <li>ভবিষ্যতে contribution-এর ভিত্তিতে reward পাওয়ার সুযোগ পাবেন</li>
+      </ul>
+      <p class="about-note">Google Play Store থেকে RongDong ডাউনলোড করে ব্যবহার করে দেখুন এবং আপনার মূল্যবান মতামত জানান।</p>
+    </div>
+  </div>
+</section>
+
 <section class="download" id="download">
   <h2>Download Now</h2>
   <p>RongDong is available on Google Play — completely free!</p>
@@ -126,11 +199,13 @@
     <div class="play-btn-text"><small>GET IT ON</small><span>Google Play</span></div>
   </a>
 </section>
+
 <section class="contact" id="contact">
   <h2>Get in Touch</h2>
   <p>Have a question or need help? We're here for you.</p>
   <a href="mailto:rongdongsupport@gmail.com" class="contact-email">✉ rongdongsupport@gmail.com</a>
 </section>
+
 <footer>
   <div style="margin-bottom: 15px;">
     <span class="quad">
