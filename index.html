@@ -45,7 +45,7 @@
   .feature-card h3 { font-family: 'Sour Gummy', cursive; font-size: 1.2rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--dark); }
   .feature-card p { font-size: 0.9rem; color: var(--muted); line-height: 1.6; }
 
-  /* ── ABOUT SECTION ── */
+  /* ABOUT */
   .about { padding: 5rem 2rem; background: linear-gradient(135deg, #f8f9ff 0%, #fff8f8 100%); }
   .about-inner { max-width: 860px; margin: 0 auto; }
   .about-intro { font-size: 1.05rem; color: var(--muted); line-height: 1.8; margin-bottom: 3rem; text-align: center; }
@@ -66,6 +66,23 @@
   .about-list li::before { content: '✓'; color: var(--green); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
   .about-note { margin-top: 1.5rem; font-size: 0.88rem; color: #888; font-style: italic; text-align: center; }
 
+  /* FAQ */
+  .faq { padding: 5rem 2rem; background: #fff; }
+  .faq-inner { max-width: 780px; margin: 0 auto; }
+  .faq-item { border: 1.5px solid #eee; border-radius: 16px; margin-bottom: 1rem; overflow: hidden; transition: box-shadow 0.2s; }
+  .faq-item:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+  .faq-q { display: flex; align-items: center; gap: 12px; padding: 1.1rem 1.4rem; cursor: pointer; font-weight: 700; font-size: 0.97rem; color: #111; background: #fafafa; }
+  .faq-icon { width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1rem; flex-shrink: 0; }
+  .faq-arrow { margin-left: auto; font-size: 1.1rem; color: #999; transition: transform 0.25s; flex-shrink: 0; }
+  .faq-item.open .faq-arrow { transform: rotate(180deg); }
+  .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.35s ease, padding 0.3s; font-size: 0.9rem; color: #555; line-height: 1.75; padding: 0 1.4rem; background: #fff; }
+  .faq-item.open .faq-a { max-height: 400px; padding: 0.9rem 1.4rem 1.2rem; }
+  .fi-red { background: #fff0f0; } .fi-blue { background: #f0f5ff; } .fi-green { background: #f0fff4; } .fi-yellow { background: #fffbf0; }
+  .fund-box { background: linear-gradient(135deg, #fff8e1, #fff3e0); border: 1.5px solid #ffe082; border-radius: 12px; padding: 0.9rem 1rem; margin-top: 0.6rem; font-size: 0.88rem; color: #5d4037; line-height: 1.7; }
+  .fund-box strong { color: #e65100; }
+  .fund-tag { display: inline-block; background: #F9A825; color: #fff; font-size: 0.75rem; font-weight: 700; padding: 2px 10px; border-radius: 50px; margin-bottom: 6px; }
+
+  /* DOWNLOAD */
   .download { padding: 5rem 2rem; background: var(--dark); text-align: center; }
   .download h2 { font-family: 'Sour Gummy', cursive; font-size: 2rem; font-weight: 700; color: #fff; margin-bottom: 0.5rem; }
   .download p { color: #aaa; margin-bottom: 2rem; }
@@ -138,16 +155,13 @@
   </div>
 </section>
 
-<!-- ── ABOUT SECTION ── -->
 <section class="about" id="about">
   <div class="about-inner">
     <h2 class="section-title">আমাদের সম্পর্কে</h2>
     <p class="section-sub">RongDong কী এবং কেন এটি আলাদা</p>
-
     <p class="about-intro">
       RongDong হলো একটি community social content sharing platform, যেখানে সবাই ছবি, ভিডিও, রিলস, স্ট্যাটাস এবং বিভিন্ন ধরনের কনটেন্ট সহজে শেয়ার করতে পারেন। তবে RongDong-এর লক্ষ্য শুধু আরেকটি social media app তৈরি করা নয় — আমাদের উদ্দেশ্য হলো এমন একটি প্ল্যাটফর্ম গড়ে তোলা, যেখানে content creators এবং সাধারণ ব্যবহারকারীরা তাদের সৃজনশীলতা প্রকাশ করতে পারবেন এবং ভালো কনটেন্টের জন্য Reward পাবেন।
     </p>
-
     <div class="about-grid">
       <div class="about-card ac-blue">
         <div class="about-card-icon">🔒</div>
@@ -170,7 +184,6 @@
         <p>এটি একটি দীর্ঘমেয়াদি উদ্যোগ। আপনাদের মতামত ও সহযোগিতাই RongDong-কে আরও উন্নত করতে সাহায্য করবে।</p>
       </div>
     </div>
-
     <div class="about-summary">
       <h3>সংক্ষেপে, RongDong-এ আপনি যা পাবেন:</h3>
       <ul class="about-list">
@@ -179,10 +192,90 @@
         <li>End-to-end encrypted messaging সুবিধা পাবেন</li>
         <li>Screenshot protection-এর মাধ্যমে privacy বজায় রাখতে পারবেন</li>
         <li>নিজের community তৈরি করতে পারবেন</li>
-        <li>ভবিষ্যতে contribution-এর ভিত্তিতে reward পাওয়ার সুযোগ পাবেন</li>
+        <li>ভবিষ্যতে contribution-এর ভিত্তিতে Creator Points অর্জনের সুযোগ পাবেন</li>
       </ul>
       <p class="about-note">Google Play Store থেকে RongDong ডাউনলোড করে ব্যবহার করে দেখুন এবং আপনার মূল্যবান মতামত জানান।</p>
     </div>
+  </div>
+</section>
+
+<!-- FAQ SECTION -->
+<section class="faq" id="faq">
+  <div class="faq-inner">
+    <h2 class="section-title">সাধারণ প্রশ্নোত্তর</h2>
+    <p class="section-sub">RongDong সম্পর্কে আপনার যা জানার আছে</p>
+
+    <div class="faq-item open">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <span class="faq-icon fi-red">🤔</span>
+        <span>RongDong কী?</span>
+        <span class="faq-arrow">▾</span>
+      </div>
+      <div class="faq-a">RongDong হলো বাংলাদেশের একটি community-based social media platform, যেখানে আপনি বাংলায় পোস্ট, রিলস, ভিডিও শেয়ার করতে পারবেন এবং নিজের community-র সাথে সংযুক্ত থাকতে পারবেন।</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <span class="faq-icon fi-blue">📱</span>
+        <span>কোন ডিভাইসে চলবে?</span>
+        <span class="faq-arrow">▾</span>
+      </div>
+      <div class="faq-a">বর্তমানে RongDong Android ডিভাইসে Google Play Store থেকে ডাউনলোড করা যাচ্ছে। iOS সংস্করণ শীঘ্রই আসছে।</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <span class="faq-icon fi-green">💸</span>
+        <span>ব্যবহার কি সম্পূর্ণ ফ্রি?</span>
+        <span class="faq-arrow">▾</span>
+      </div>
+      <div class="faq-a">হ্যাঁ! RongDong সম্পূর্ণ বিনামূল্যে ব্যবহার করা যায়। Download থেকে শুরু করে সব feature — সবই free।</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <span class="faq-icon fi-yellow">🎬</span>
+        <span>কী কী কনটেন্ট শেয়ার করা যাবে?</span>
+        <span class="faq-arrow">▾</span>
+      </div>
+      <div class="faq-a">আপনি ছবি, ভিডিও, রিলস এবং টেক্সট পোস্ট শেয়ার করতে পারবেন। Feed, Reels এবং Videos — তিনটি আলাদা section-এ কনটেন্ট আপলোড করার সুবিধা আছে।</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <span class="faq-icon fi-red">🔒</span>
+        <span>আমার chat কি নিরাপদ?</span>
+        <span class="faq-arrow">▾</span>
+      </div>
+      <div class="faq-a">অবশ্যই! RongDong-এ End-to-End Encryption ব্যবহার করা হয়েছে। আপনার message শুধুমাত্র আপনি এবং আপনার recipient দেখতে পাবেন।</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <span class="faq-icon fi-yellow">⭐</span>
+        <span>Creator Fund কী? Creators কীভাবে Creator Points অর্জন করতে পারবেন?</span>
+        <span class="faq-arrow">▾</span>
+      </div>
+      <div class="faq-a">
+        Creator Fund হলো RongDong-এর একটি বিশেষ reward program, যেখানে content creators তাদের ভিডিও views-এর উপর ভিত্তি করে <strong>Creator Points</strong> অর্জন করতে পারেন।
+        <div class="fund-box">
+          <span class="fund-tag">বর্তমানে</span><br>
+          এখন <strong>RongDong Promotional Fund</strong> থেকে creators-দের reward দেওয়া হচ্ছে। অর্থাৎ platform নিজেই creators-দের পেছনে বিনিয়োগ করছে।<br><br>
+          <span class="fund-tag">ভবিষ্যতে</span><br>
+          ভবিষ্যতে <strong>advertisement, partnership</strong> এবং অন্যান্য revenue source থেকে Creator Fund পরিচালনা করা হবে — যাতে creators আরও বেশি Creator Points অর্জন করতে পারেন এবং platform দীর্ঘমেয়াদিভাবে চলতে পারে।
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <span class="faq-icon fi-green">🛡️</span>
+        <span>কোনো সমস্যা হলে কোথায় জানাবো?</span>
+        <span class="faq-arrow">▾</span>
+      </div>
+      <div class="faq-a">যেকোনো সমস্যায় আমাদের সাথে যোগাযোগ করুন: rongdongsupport@gmail.com — আমরা সবসময় আপনার পাশে আছি।</div>
+    </div>
+
   </div>
 </section>
 
@@ -218,5 +311,11 @@
   <p style="font-weight:700;color:#fff;margin-bottom:8px;font-size:1.1rem;">Founded by Priti Kusum Chakma</p>
   <p style="color:#888;font-size:0.9rem;">&copy; 2026 RongDong. All rights reserved.</p>
 </footer>
+
+<script>
+  function toggleFaq(el) {
+    el.parentElement.classList.toggle('open');
+  }
+</script>
 </body>
 </html>
